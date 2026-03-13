@@ -2,22 +2,22 @@
 
 import { artDecoElements } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function ArtDecoElementsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="chevron" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M0 5 L5 0 L10 5" fill="none" stroke="#C8A951" strokeWidth="0.3" />
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#chevron)" />
-          </svg>
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/crest-theatre-night.jpg"
+            alt="Crest Theatre at night showcasing Art Deco architecture"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading

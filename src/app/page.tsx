@@ -3,6 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import EventCard from "@/components/EventCard";
 import { events, artDecoElements, siteConfig, boardMembers } from "@/lib/data";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Award, BookOpen, Building2, Users } from "lucide-react";
 
 export default function HomePage() {
@@ -164,13 +165,23 @@ export default function HomePage() {
                 key={member.id}
                 className="text-center p-8 rounded-2xl bg-white shadow-sm"
               >
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-gold/20 to-copper/20 flex items-center justify-center">
-                  <span className="font-display text-gold text-2xl">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-gold/20 to-copper/20 flex items-center justify-center">
+                  {member.name.includes("Sharon") ? (
+                    <Image
+                      src="/images/sharon-koskoff-portrait.jpg"
+                      alt={member.name}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="font-display text-gold text-2xl">
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
+                  )}
                 </div>
                 <h3 className="font-display text-lg text-charcoal">
                   {member.name}
@@ -187,30 +198,50 @@ export default function HomePage() {
 
       {/* Achievements Banner */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gold via-copper to-gold">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-display text-3xl text-charcoal mb-4">
-            Award-Winning Preservation
-          </h2>
-          <p className="text-charcoal/70 max-w-2xl mx-auto mb-8">
-            Winner of the Florida Book Awards Silver Medal (Visual Arts) and
-            FAPA Silver Medal (Education).
-          </p>
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            <div className="text-center">
-              <p className="font-display text-4xl text-charcoal">
-                {siteConfig.years}
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex gap-6 shrink-0">
+              <Image
+                src="/images/book-art-deco-palm-beaches.jpg"
+                alt="Art Deco of the Palm Beaches book"
+                width={140}
+                height={152}
+                className="rounded-xl shadow-lg"
+              />
+              <Image
+                src="/images/book-murals-palm-beaches.jpg"
+                alt="Murals of the Palm Beaches book"
+                width={126}
+                height={150}
+                className="rounded-xl shadow-lg hidden sm:block"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h2 className="font-display text-3xl text-charcoal mb-4">
+                Award-Winning Preservation
+              </h2>
+              <p className="text-charcoal/70 max-w-2xl mb-8">
+                Winner of the Florida Book Awards Silver Medal (Visual Arts) and
+                FAPA Silver Medal (Education).
               </p>
-              <p className="text-charcoal/60 text-sm">Years</p>
-            </div>
-            <div className="w-px h-12 bg-charcoal/20 hidden sm:block" />
-            <div className="text-center">
-              <p className="font-display text-4xl text-charcoal">2</p>
-              <p className="text-charcoal/60 text-sm">Silver Medals</p>
-            </div>
-            <div className="w-px h-12 bg-charcoal/20 hidden sm:block" />
-            <div className="text-center">
-              <p className="font-display text-4xl text-charcoal">501(c)3</p>
-              <p className="text-charcoal/60 text-sm">Nonprofit</p>
+              <div className="flex items-center justify-center md:justify-start gap-8 flex-wrap">
+                <div className="text-center">
+                  <p className="font-display text-4xl text-charcoal">
+                    {siteConfig.years}
+                  </p>
+                  <p className="text-charcoal/60 text-sm">Years</p>
+                </div>
+                <div className="w-px h-12 bg-charcoal/20 hidden sm:block" />
+                <div className="text-center">
+                  <p className="font-display text-4xl text-charcoal">2</p>
+                  <p className="text-charcoal/60 text-sm">Silver Medals</p>
+                </div>
+                <div className="w-px h-12 bg-charcoal/20 hidden sm:block" />
+                <div className="text-center">
+                  <p className="font-display text-4xl text-charcoal">501(c)3</p>
+                  <p className="text-charcoal/60 text-sm">Nonprofit</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -218,23 +249,13 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-navy text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 1000 400">
-            <defs>
-              <pattern id="cta-rays" width="1000" height="400" patternUnits="userSpaceOnUse">
-                <path d="M500 400 L500 0" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L250 0" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L750 0" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L0 100" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L1000 100" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L100 0" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L900 0" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L0 250" stroke="#C8A951" strokeWidth="0.5" />
-                <path d="M500 400 L1000 250" stroke="#C8A951" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="1000" height="400" fill="url(#cta-rays)" />
-          </svg>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/montgomery-building-night.jpg"
+            alt="Art Deco building at night"
+            fill
+            className="object-cover opacity-20"
+          />
         </div>
         <div className="relative z-10 max-w-2xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl text-cream mb-4">

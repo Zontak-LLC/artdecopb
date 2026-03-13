@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -63,16 +64,21 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        {/* Decorative top element */}
+        {/* ADSPB Logo */}
         <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="flex items-center justify-center gap-4 mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8"
         >
-          <div className="h-px w-24 bg-gradient-to-r from-transparent to-gold" />
-          <div className="w-4 h-4 rotate-45 border border-gold" />
-          <div className="h-px w-24 bg-gradient-to-l from-transparent to-gold" />
+          <Image
+            src="/images/logo-adspb.jpg"
+            alt="Art Deco Society of the Palm Beaches Logo"
+            width={160}
+            height={160}
+            className="mx-auto rounded-full border-2 border-gold/30 shadow-lg"
+            priority
+          />
         </motion.div>
 
         <motion.p

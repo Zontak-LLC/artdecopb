@@ -2,6 +2,7 @@
 
 import { membershipTiers, siteConfig } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, Mail } from "lucide-react";
 
@@ -9,8 +10,17 @@ export default function MembershipPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gala-group-table.jpg"
+            alt="ADSPB members at gala event"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title="Become a Member"
             subtitle="Support Art Deco preservation and enjoy exclusive benefits."

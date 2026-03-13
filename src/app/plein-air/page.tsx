@@ -1,12 +1,22 @@
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data";
 import { Palette, MapPin, Calendar, Mail } from "lucide-react";
 
 export default function PleinAirPage() {
   return (
     <div className="min-h-screen">
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/montgomery-building-day.jpg"
+            alt="Montgomery Building, historic Art Deco site"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title="Plein Air Palm Beaches"
             subtitle="Where art meets architecture in the open air."

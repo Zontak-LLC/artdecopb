@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,11 +27,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full border-2 border-gold flex items-center justify-center group-hover:bg-gold/10 transition-colors">
-              <span className="font-display text-gold text-sm font-bold tracking-wider">
-                AD
-              </span>
-            </div>
+            <Image
+              src="/images/logo-adspb-small.jpg"
+              alt="ADSPB Logo"
+              width={48}
+              height={48}
+              className="rounded-full border-2 border-gold/30 group-hover:border-gold transition-colors"
+            />
             <div className="hidden sm:block">
               <p className="font-display text-cream text-sm tracking-widest uppercase">
                 Art Deco Society

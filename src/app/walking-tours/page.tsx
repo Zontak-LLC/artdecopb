@@ -1,12 +1,22 @@
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data";
 import { Footprints, MapPin, Mail, Clock } from "lucide-react";
 
 export default function WalkingToursPage() {
   return (
     <div className="min-h-screen">
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/deco-building-streamline.jpg"
+            alt="Streamline Moderne Art Deco building"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title="Walking Tours"
             subtitle="Explore Art Deco architecture on foot with expert guides."
@@ -62,6 +72,28 @@ export default function WalkingToursPage() {
                   Book a tour
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Building Photos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+            <div className="rounded-2xl overflow-hidden aspect-video">
+              <Image
+                src="/images/lake-theatre.jpg"
+                alt="Lake Theatre, Art Deco landmark"
+                width={498}
+                height={313}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-video">
+              <Image
+                src="/images/montgomery-building-day.jpg"
+                alt="Montgomery Building"
+                width={498}
+                height={313}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

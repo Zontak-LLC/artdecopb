@@ -1,12 +1,22 @@
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data";
 import { Brush, MapPin, Calendar, Mail } from "lucide-react";
 
 export default function ArtInTheAlleyPage() {
   return (
     <div className="min-h-screen">
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/art-in-alley-murals.jpg"
+            alt="Art In The Alley murals"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title="Art In The Alley"
             subtitle="Where creativity meets community in the heart of downtown."
@@ -62,6 +72,37 @@ export default function ArtInTheAlleyPage() {
                   Get involved
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Gallery */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/art-in-alley-fence-photo.jpg"
+                alt="Art installation on fence"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/art-in-alley-flyer.jpg"
+                alt="Art In The Alley event flyer"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/art-in-alley-newspaper.jpg"
+                alt="Art In The Alley press coverage"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

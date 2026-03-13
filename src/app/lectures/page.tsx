@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import { siteConfig } from "@/lib/data";
 import { Calendar, MapPin, Clock, Mail } from "lucide-react";
 
@@ -6,8 +7,17 @@ export default function LecturesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/lecture-audience.jpg"
+            alt="Lecture audience at Art Deco Society event"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title="Lectures & Tours"
             subtitle="Free educational programs exploring Art Deco architecture, design, and history."
@@ -96,6 +106,37 @@ export default function LecturesPage() {
                   Book a tour
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Photo Gallery */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/sharon-koskoff-icads-lecture.jpg"
+                alt="Sharon Koskoff speaking at ICADS lecture"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/lecture-audience-2.jpg"
+                alt="Audience enjoying a lecture"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/lecture-series-flyer.jpg"
+                alt="Art Deco Afternoons lecture series"
+                width={400}
+                height={300}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 

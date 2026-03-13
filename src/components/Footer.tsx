@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Youtube, Facebook } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 import DecoPattern from "./DecoPattern";
@@ -12,11 +13,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center">
-                <span className="font-display text-gold text-xs font-bold tracking-wider">
-                  AD
-                </span>
-              </div>
+              <Image
+                src="/images/logo-adspb-small.jpg"
+                alt="ADSPB Logo"
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-gold/30"
+              />
               <div>
                 <p className="font-display text-cream text-sm tracking-widest uppercase">
                   {siteConfig.shortName}

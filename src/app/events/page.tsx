@@ -3,6 +3,7 @@
 import { events } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 import EventCard from "@/components/EventCard";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function EventsPage() {
@@ -14,8 +15,17 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/preservation-gala-hats.jpg"
+            alt="Art Deco preservation gala"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <SectionHeading
             title="Events & Programs"
             subtitle="Lectures, tours, galas, and celebrations of Art Deco culture in the Palm Beaches."
