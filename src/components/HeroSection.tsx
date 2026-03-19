@@ -63,7 +63,7 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 pt-24 text-center">
         {/* ADSPB Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/contact/route": "/api/contact",
+  "/art-deco-elements/page": "/art-deco-elements",
+  "/art-in-the-alley/page": "/art-in-the-alley",
+  "/contact/page": "/contact",
+  "/events/page": "/events",
+  "/favicon.ico/route": "/favicon.ico",
+  "/lectures/page": "/lectures",
+  "/membership/page": "/membership",
+  "/page": "/",
+  "/plein-air/page": "/plein-air",
+  "/walking-tours/page": "/walking-tours"
+}
