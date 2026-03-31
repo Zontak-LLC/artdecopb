@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "Art Deco Society of the Palm Beaches",
   description:
     "Promoting education, preservation and awareness of Twentieth Century Art, Architecture & Design in the Palm Beaches. A 501(c)3 Historic Preservation Organization since 1987.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   keywords: [
     "Art Deco",
     "Palm Beaches",
